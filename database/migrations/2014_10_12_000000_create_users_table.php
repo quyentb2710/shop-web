@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('password')
                 ->comment('Password');
 
-            $table->tinyInteger('is_admin')
+            $table->boolean('is_admin')
                 ->comment('Admin')
                 ->default(0);
 
