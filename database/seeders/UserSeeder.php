@@ -22,5 +22,12 @@ class UserSeeder extends Seeder
             'is_admin' => 1,
             'password' => Hash::make('password'),
         ]);
+
+        DB::table('users')->insert([
+            'email' => 'quyentb02@gmail.com',
+            'first_name' => 'TRAN',
+            'last_name' => 'QUYEN',
+            'password' => Hash::make('password'),
+        ]);
     }
 }

@@ -17,17 +17,16 @@
         <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
       </form>
 
-      @auth
-        {{auth()->user()->name}}
+      @auth('user')
+        {{auth()->user()->first_name}}
         <div class="text-end">
-          <a href="{{ route('user.logout') }}" class="btn btn-outline-light me-2">Logout</a>
+          <a href="{{ route('userLogout') }}" class="btn btn-outline-light me-2">Logout</a>
         </div>
       @endauth
 
-      @guest
+      @guest('user')
         <div class="text-end">
-          <a href="{{ route('login.perform') }}" class="btn btn-outline-light me-2">Login</a>
-          <a href="{{ route('register.perform') }}" class="btn btn-warning">Sign-up</a>
+          <a href="{{ route('userLoginPost') }}" class="btn btn-outline-light me-2">Login</a>
         </div>
       @endguest
     </div>
