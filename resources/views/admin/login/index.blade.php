@@ -8,7 +8,7 @@
         
         <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
 
-        @include('layouts.partials.messages')
+        @include('admin.layouts.partials.messages')
 
         <div class="form-group form-floating mb-3">
             <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
