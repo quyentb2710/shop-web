@@ -210,6 +210,11 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'UserController' => App\Http\Controllers\UserController::class,
+
+        'AdminAuthController' => App\Http\Controllers\Admin\AdminAuthController::class,
+        'CategoryController' => App\Http\Controllers\Admin\CategoryController::class,
+
     ])->toArray(),
 
 ];

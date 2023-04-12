@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\User\UserAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      */
     // Route::get('/', 'HomeController@index');
 
+    Route::get('/bootstrap', function () {
+        return view('bootstrap');
+    });
+
     /**
      * Admin Routes
      */
@@ -29,6 +34,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
         Route::get('/logout', [AdminAuthController::class, 'getLogout'])->name('adminLogout');
         Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+
+
+        Route::get('/category', ['CategoryController', 'index'])->name('admin.category');
+        Route::get('/category/add', ['CategoryController', 'add'])->name('admin.category.add');
+        Route::post('/category/add', ['CategoryController', 'add'])->name('admin.category.add');
  
         Route::group(['middleware' => 'admin'], function () {
             Route::get('/', function () {
